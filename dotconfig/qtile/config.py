@@ -12,13 +12,13 @@ from libqtile.utils import guess_terminal
 from typing import List  # noqa: F401from typing import List  # noqa: F401
 
 mod = "mod4"             # Sets mod key to SUPER/WINDOWS
-myTerm = "kitty"         # My terminal of choice
+myTerm = "alacritty"         # My terminal of choice
 myBrowser = "brave"      # My browser of choice
 
 keys = [
          ### The essentials
          Key([mod], "Return",
-             lazy.spawn(myTerm+" -e zsh"),
+             lazy.spawn(myTerm),
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
@@ -50,9 +50,37 @@ keys = [
              desc='Doom Emacs'
              ),    
          Key([mod], "e",
-             lazy.spawn("nautilus"),
-             desc='nautilus'
+             lazy.spawn("nemo"),
+             desc='nemo'
             ),
+         Key([mod], "d",
+             lazy.spawn("dmenu"),
+             desc='dmenu'
+             ),   
+         Key([mod, "shift"], "d",
+             lazy.spawn("discord"),
+             desc='discord'
+             ),     
+         Key([], "XF86AudioRaiseVolume",
+             lazy.spawn("amixer set Master 5%+"),
+             desc='Vol up'
+             )    
+         Key([], "XF86AudioLowerVolume",
+             lazy.spawn("amixer set Master 5%-"),
+             desc='Vol down'
+             )        
+         Key([mod], "V",
+             lazy.spawn("pavucontrol"),
+             desc='pavu'
+             )        
+         Key([mod, "shift"], "V",
+             lazy.spawn("vivaldi"),
+             desc='vivaldi'
+             )    
+         Key([mod, "shift"], "F",
+             lazy.spawn("firefox"),
+             desc='firefox'
+             )    
          ### Switch focus to specific monitor (out of three)
          Key(["control"], "w",
              lazy.to_screen(0),
