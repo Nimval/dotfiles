@@ -64,23 +64,23 @@ keys = [
          Key([], "XF86AudioRaiseVolume",
              lazy.spawn("amixer set Master 5%+"),
              desc='Vol up'
-             )    
+             ),    
          Key([], "XF86AudioLowerVolume",
              lazy.spawn("amixer set Master 5%-"),
              desc='Vol down'
-             )        
+             ),        
          Key([mod], "V",
              lazy.spawn("pavucontrol"),
              desc='pavu'
-             )        
+             ),        
          Key([mod, "shift"], "V",
              lazy.spawn("vivaldi"),
              desc='vivaldi'
-             )    
+             ),    
          Key([mod, "shift"], "F",
              lazy.spawn("firefox"),
              desc='firefox'
-             )    
+             ),    
          ### Switch focus to specific monitor (out of three)
          Key(["control"], "w",
              lazy.to_screen(0),
